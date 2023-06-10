@@ -1,6 +1,7 @@
 import React from 'react';
 import CalculatorRight from './CalculatorLeft';
 import CalculatorLeft from './CalculatorRight';
+import "./Calculator.scss";
 
 function Calculator() {
   return (

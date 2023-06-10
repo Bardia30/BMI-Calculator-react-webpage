@@ -1,0 +1,113 @@
+.calculator {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10.5rem;
+    padding-left: 8.75rem;
+    padding-right: 8.75rem;
+    
+    &__left-section{
+      width:32.25rem;
+    }
+    &__prompt{
+      color:#253347;
+      font-size:1.5rem;
+      font-weight: 600;
+    }
+  
+    
+  
+    &__right-section{
+      width:35.25rem;
+      height:30.25rem;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    }
+  
+    &__title{
+      color: #253347;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 4.4rem;
+      margin-bottom:2.1875rem;
+      margin-top:0;
+    }
+    &__description{
+      color: #5E6E85;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.87rem;
+      
+    }
+    &__prompt {
+      padding-left:2rem;
+      padding-top:2rem;
+      margin:0;
+    }
+}
+  
+  
+  
+.user-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  
+    &__radio-section {
+        display: flex;
+        justify-content: space-between;
+        width:24.75rem;
+    }
+    &__input-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+.results {
+    padding-left:2rem;
+    padding-top:2rem;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &__button {
+        background:#ffffff;
+        border: 1px solid #D8E2E7;
+        border-radius:50%;
+        width:31px;
+        height:31px;
+    }
+    &__button--selected {
+        
+        background:#D6E6FE;
+        height: 31px;
+        width:31px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__button-inside--active {
+        height: 15px;
+        width: 15px;
+        border-radius:50%;
+        background: #345FF6;
+    }
+    &__button-inside--inactive {
+        display: none;
+    }
+    &__label{
+        color:#253347;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left:1.125rem;
+    }
+}
+  
+
