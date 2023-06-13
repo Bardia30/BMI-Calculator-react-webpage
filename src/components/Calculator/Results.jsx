@@ -8,7 +8,7 @@ function Results() {
             <h1 className="results__bmi">23.4</h1>
         </section>
         <section className="results__right-section">  
-        <p>Your BMI suggests that you're healthy weight. Your ideal weight is between <span className="results_ideal-weight">63.3kgs - 85.2kgs</span>.</p>
+        <p className='results__explanation'>Your BMI suggests that you're healthy weight. Your ideal weight is between <span className="results_ideal-weight">63.3kgs - 85.2kgs</span>.</p>
         </section>
     </section>
   )

@@ -43,29 +43,30 @@ function Form() {
       </div>
       <div className="user-form__input-section">
         <div className="user-form__user-inputs">
-          <label className="user-form__height-label" for="height">
+          <label className="user-form__label"  htmlFor="height">
             Height
           </label>
           <div className="user-form__input-area">
             <input
-              className="user-form__height-input"
+              className="user-form__input"
               name="height"
               type="text"
+              
             />
-            <span className="user-form__height-unit">cm</span>
+            <span className="user-form__unit">cm</span>
           </div>
         </div>
         <div className="user-form__user-inputs">
-          <label className="user-form__height-label" for="weight">
+          <label className="user-form__label" htmlFor="weight">
             Weight
           </label>
           <div className="user-form__input-area">
             <input
-              className="user-form__weight-input"
+              className="user-form__input"
               name="weight"
               type="text"
             />
-            <span className="user-form__weight-unit">kg</span>
+            <span className="user-form__unit">kg</span>
           </div>
         </div>
       </div>
