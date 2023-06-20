@@ -1,7 +1,9 @@
+@use '../../styles/partials/variables' as*;
+@use '../../styles/partials/mixins' as*;
 
 
 .header {
-  background: linear-gradient(90deg,rgba(214, 230, 254, 0.15), #D6E6FE); 
+  background: $header-gradient; 
   position:absolute;
   top:0;
   width:67.9vw;

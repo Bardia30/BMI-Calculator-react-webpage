@@ -1,4 +1,5 @@
-
+@use './styles/partials/mixins' as*;
+@use './styles/partials/variables' as*;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
@@ -8,5 +9,5 @@ body{
   font-family: "Inter";
   margin:0;
   box-sizing: border-box;
-  background: #ffffff;
+  background: $primary-background;
 }

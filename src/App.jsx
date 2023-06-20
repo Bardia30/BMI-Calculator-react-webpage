@@ -14,7 +14,6 @@ function App() {
       <Meaning />
       <Cards />
       <Limitations />
-      <input type="radio"/>
     </div>
   );
 }

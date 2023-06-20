@@ -1,0 +1,40 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+
+.meaning {
+    display:flex;
+    justify-content: space-between;
+    padding: 4rem 8.75rem;
+    &__right-section{
+        display: flex;
+        flex-direction: column;
+        width: 29.0625rem;
+    }
+    &__eating-man{
+        width: 35.25rem;
+        height: 33.3125rem;
+    }
+    &__arc-logo{
+        width:5.3125rem;
+        height: 12.5rem;
+        align-self:flex-end;
+    }
+    &__title{
+        font-size: 3rem;
+        font-weight:600;
+        line-height: 52.8px;
+        color: $primary-text;
+        margin-top:2.25rem;
+        margin-bottom:2.25rem;
+        width: 34vw;
+    }
+    &__description{
+        margin:0;
+        font-size: 1rem;
+        font-weight:400;
+        line-height:24px;
+        color: $secondary-text;
+    }
+}

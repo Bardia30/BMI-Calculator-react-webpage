@@ -1,3 +1,6 @@
+@use '../../styles/partials/variables' as*;
+@use '../../styles/partials/mixins' as*;
+
 .calculator {
     display:flex;
     align-items: center;
@@ -10,7 +13,7 @@
       width:32.25rem;
     }
     &__prompt{
-      color:#253347;
+      color: $primary-text;
       font-size:1.5rem;
       font-weight: 600;
     }
@@ -20,14 +23,14 @@
     &__right-section{
       width:35.25rem;
       height:30.25rem;
-      background: #ffffff;
+      background: $primary-background;
       border-radius: 16px;
-      box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+      box-shadow: $card-shadow;
       padding-bottom:2rem;
     }
   
     &__title{
-      color: #253347;
+      color: $primary-text;
       font-size: 4rem;
       font-weight: 600;
       line-height: 4.4rem;
@@ -35,7 +38,7 @@
       margin-top:0;
     }
     &__description{
-      color: #5E6E85;
+      color: $secondary-text;
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.87rem;
@@ -70,7 +73,7 @@
     &__label{
       font-size: 0.875rem;
       font-weight: 400;
-      color: #5E6E85;
+      color: $secondary-text;
       line-height: 21px;
       
     }
@@ -80,7 +83,7 @@
     &__input-area{
       width:14.875rem;
       height:4.3125rem;
-      border: 1px solid #D8E2E7;
+      border: $input-border;
       border-radius: 12px;
       margin-top:0.5rem;
     }
@@ -88,12 +91,12 @@
       border:none;
       height:1.8125rem;
       width: 8.1875rem;
-      color:#253347;
+      color:$primary-text;
       font-size: 1.5rem;
       font-weight: 600;
       line-height: 29px;
       &::placeholder{
-        color:#253347;
+        color: $primary-text;
         font-size: 1.5rem;
         font-weight: 600;
         line-height: 29px;
@@ -104,7 +107,7 @@
       }
     }
     &__unit{
-      color:#345FF6;
+      color: $button-color;
       font-size: 1.5rem;
       font-weight:600;
       line-height: 29px;
@@ -115,23 +118,38 @@
     padding:2rem;
     width: 27.25rem;
     height: 6.375rem;
-    border-top-left-radius:16px;
-    border-top-right-radius: 999px;
-    border-bottom-right-radius: 999px;
+    border-radius:16px;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
     
-    background: #345FF6;
+    background: $button-color;
     margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     &__intro{
-      color: #ffffff;
+      color: $primary-background;
       margin:0;
+      font-size: 1rem;
+      font-weight:600;
+      line-height: 24px;
     }
     &__bmi{
-      color: #ffffff;
+      color: $primary-background;
       margin:0;
+      font-size: 4rem;
+      font-weight:600;
     }
     &__explanation{
       color: #ffffff;
       margin:0;
+      font-size: 0.875rem;
+      font-weight:400;
+      line-height: 21px;
+      width:12.875rem;
+    }
+    &__ideal-weight {
+      font-weight: 700;
     }
 }
 
@@ -140,15 +158,15 @@
     align-items: center;
     cursor: pointer;
     &__button {
-        background:#ffffff;
-        border: 1px solid #D8E2E7;
+        background:$primary-background;
+        border: $input-border;
         border-radius:50%;
         width:31px;
         height:31px;
     }
     &__button--selected {
         
-        background:#D6E6FE;
+        background:$secondary-background;
         height: 31px;
         width:31px;
         display: flex;
@@ -159,13 +177,13 @@
         height: 15px;
         width: 15px;
         border-radius:50%;
-        background: #345FF6;
+        background: $button-color;
     }
     &__button-inside--inactive {
         display: none;
     }
     &__label{
-        color:#253347;
+        color:$primary-text;
         font-size: 1rem;
         font-weight: 600;
         margin-left:1.125rem;
