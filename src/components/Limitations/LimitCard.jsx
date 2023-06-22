@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Limitations.scss';
 
 function LimitCard({ icon, alt, title, description }) {
   return (

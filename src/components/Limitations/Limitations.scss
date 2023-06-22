@@ -1,0 +1,73 @@
+@use '../../styles/partials/mixins' as*;
+@use '../../styles/partials/variables' as*;
+
+
+
+.limitations {
+    display: flex;
+    flex-direction: column;
+    padding: 7.5rem 8.75rem;
+    &__upper{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom:2rem;
+    }
+    &__title{
+        color: $primary-text;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 52px;
+        margin-bottom:2.1875rem;
+        margin-top:0;
+    }
+    &__description{
+        color: $secondary-text;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 24px;
+        width: 35.25rem;
+    }
+    &__mid-section{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__curve{
+        width: 5.875rem;
+    }
+    &__middle-section{
+        display: flex;
+
+    }
+}
+
+
+
+
+.limit-card{
+    width: 20.8125rem;
+    height: 12.5rem;
+    padding: 2rem;
+    background:$primary-background;
+    border-radius:16px;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    &__upper-section{
+        display: flex;
+    }
+    &__icon{
+        margin-right: 1rem;
+    }
+    &__title{
+        color: $primary-text;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 24px;
+
+    }
+    &__description{
+        color: $secondary-text;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 24px;
+        width: 18.8125rem;
+    }
+}
