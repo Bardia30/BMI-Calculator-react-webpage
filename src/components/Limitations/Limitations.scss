@@ -11,6 +11,7 @@
         display: flex;
         justify-content: space-between;
         margin-bottom:2rem;
+        margin-right:6.1875rem;
     }
     &__title{
         color: $primary-text;
@@ -30,13 +31,24 @@
     &__mid-section{
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
     }
     &__curve{
         width: 5.875rem;
+        margin-left: 10.3125rem;
+        position: relative;
+        top:-1rem;
     }
     &__middle-section{
         display: flex;
-
+        column-gap: 2rem;
+        margin-left: 8.6875rem;
+    }
+    &__bottom-section {
+        display: flex;
+        justify-content: center;
+        column-gap: 2rem;
     }
 }
 
@@ -44,12 +56,15 @@
 
 
 .limit-card{
-    width: 20.8125rem;
-    height: 12.5rem;
+    
     padding: 2rem;
     background:$primary-background;
     border-radius:16px;
     box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    &--upper {
+        width: 20.8125rem;
+        height: 12.5rem;
+    }
     &__upper-section{
         display: flex;
     }
@@ -69,5 +84,6 @@
         font-weight: 400;
         line-height: 24px;
         width: 18.8125rem;
+        margin: 0;
     }
 }

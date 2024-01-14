@@ -33,11 +33,17 @@ function Form() {
       <div className="user-form__radio-section">
         
         <div onClick={handleMetricRadio} className="radio">
-            <div className={`radio__button ${isMetricClicked ? "radio__button--selected": ""}`}><div className={isMetricClicked ? "radio__button-inside--active" : "radio__button-inside--inactive" }></div></div>
+            <div className={`radio__button ${isMetricClicked ? "radio__button--selected": ""}`}>
+              <div className={isMetricClicked ? "radio__button-inside--active" : "radio__button-inside--inactive" }>
+              </div>
+            </div>
             <p className="radio__label">Metric</p>
         </div>
         <div onClick={handleImperialRadio} className="radio">
-            <div className={`radio__button ${isImperialClicked ? "radio__button--selected": ""}`}><div className={isImperialClicked ? "radio__button-inside--active" : "radio__button-inside--inactive" }></div></div>
+            <div className={`radio__button ${isImperialClicked ? "radio__button--selected": ""}`}>
+              <div className={isImperialClicked ? "radio__button-inside--active" : "radio__button-inside--inactive" }>
+              </div>
+            </div>
             <p className="radio__label">Imperial</p>
         </div>
       </div>

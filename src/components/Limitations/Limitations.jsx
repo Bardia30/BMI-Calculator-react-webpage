@@ -21,6 +21,7 @@ function Limitations() {
           alt={limitData[0].alt}
           title={limitData[0].title}
           description={limitData[0].description}
+          limitClass='upper'
         />
       </section>
       <section className='limitations__mid-section'>
