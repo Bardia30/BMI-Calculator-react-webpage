@@ -22,7 +22,7 @@
   
     &__right-section{
       width:35.25rem;
-      height:30.25rem;
+      height:auto;
       background: $primary-background;
       border-radius: 16px;
       box-shadow: $card-shadow;
@@ -68,6 +68,7 @@
     &__input-section {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
         column-gap: 2.5rem;
     }
     &__label{
@@ -86,6 +87,10 @@
       border: $input-border;
       border-radius: 12px;
       margin-top:0.5rem;
+      transition: 0.222s ease-in-out;
+      &--selected {
+        border: $input-border-selected;
+      }
     }
     &__input{
       border:none;
@@ -96,7 +101,7 @@
       font-weight: 600;
       line-height: 29px;
       &::placeholder{
-        color: $primary-text;
+        color: $placeholder-text;
         font-size: 1.5rem;
         font-weight: 600;
         line-height: 29px;
@@ -111,6 +116,13 @@
       font-size: 1.5rem;
       font-weight:600;
       line-height: 29px;
+    }
+    &__error {
+      margin:0;
+      color:red;
+      font-size: 0.75rem;
+      position: relative;
+      top:1rem;
     }
 }
 
@@ -127,6 +139,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &--empty {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 27.25rem;
+      height: 4.125rem;
+      align-items: flex-start;
+    }
     &__intro{
       color: $primary-background;
       margin:0;
@@ -151,6 +170,19 @@
     &__ideal-weight {
       font-weight: 700;
     }
+    &__welcome {
+      font-size: 1.5rem;
+      color: #ffffff;
+      font-weight: 600;
+      margin:0;
+    }
+    &__instructions {
+      color: #ffffff;
+      margin:0;
+      font-size: 0.875rem;
+      font-weight:400;
+      margin-top:1rem;
+    }
 }
 
 .radio {
@@ -163,6 +195,10 @@
         border-radius:50%;
         width:31px;
         height:31px;
+        transition: 0.222s ease-in-out;
+        &:hover {
+          border: $input-border-selected;
+        }
     }
     &__button--selected {
         
