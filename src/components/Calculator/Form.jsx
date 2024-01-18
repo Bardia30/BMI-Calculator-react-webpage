@@ -36,17 +36,17 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
     }
     if (userHeight && userWeight) {
       setIsInputEmpty(false);
-      
-      
-      
+
+
+
     }
 
-    if (userFeet  && userInch  && userStone  && userLbs ) {
+    if (userFeet && userInch && userStone && userLbs) {
       setIsInputEmpty(false)
-      
+
     }
 
-    
+
 
   }, [userHeight, userWeight, userFeet, userInch, userStone, userLbs, setUserInputs, setUserHeight, setUserWeight, setUserFeet, setUserInch, setUserStone, setUserLbs])
 
@@ -54,24 +54,26 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
 
     let heightValue = e.target.value;
     if (isNaN(Number(heightValue))) {
-      setUserHeight(0)
-      setUserHeightError(true)
-    } else {
-      setUserHeightError(false)
-      heightValue = Number(heightValue);
-      setUserHeight(heightValue);
-      setUserInputs({
-        ...userInputs,
-        height: heightValue/100
-      })
-      
-
-      if (heightValue < 0 | heightValue > 300 | heightValue === undefined) {
-        setUserHeight(0);
+        setUserHeight(0)
         setUserHeightError(true)
-      }
+    } else {
+        setUserHeightError(false)
+        heightValue = Number(heightValue);
+        setUserHeight(heightValue);
+        setUserInputs({
+          ...userInputs,
+          height: heightValue / 100
+        })
+
+
+        if (heightValue < 0 || heightValue > 300 || heightValue === undefined) {
+          setUserHeight(0);
+          setUserHeightError(true)
+        }
     }
   }
+  
+
 
   const handleWeightChange = (e) => {
     let weightValue = e.target.value;
@@ -82,8 +84,8 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
       setUserHeightError(false)
       weightValue = Number(weightValue);
       setUserWeight(weightValue);
-      setUserInputs({...userInputs, weight: weightValue})
-      
+      setUserInputs({ ...userInputs, weight: weightValue })
+
 
       if (weightValue < 0 | weightValue > 300 | weightValue === undefined) {
         setUserWeight(0);
@@ -107,7 +109,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
         ...userInputs,
         feet: feetValue
       })
-      
+
 
       if (feetValue < 0 | feetValue > 9 | feetValue === undefined) {
         setUserFeet(0);
@@ -131,7 +133,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
         ...userInputs,
         inch: inchValue
       })
-      
+
 
       if (inchValue < 0 | inchValue > 11 | inchValue === undefined) {
         setUserInch(0);
@@ -155,7 +157,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
         ...userInputs,
         stone: stoneValue
       })
-      
+
 
       if (stoneValue < 0 | stoneValue > 25 | stoneValue === undefined) {
         setUserStone(0);
@@ -180,7 +182,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
         ...userInputs,
         lbs: lbsValue
       })
-      
+
 
       if (lbsValue < 0 | lbsValue === undefined) {
         setUserLbs(0);
@@ -189,7 +191,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
     }
   }
 
-  
+
 
   const handleMetricRadio = () => {
     setIsMetricClicked(true);
@@ -201,6 +203,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
     setUserInch(0)
     setUserStone(0)
     setUserLbs(0)
+    setIsInputEmpty(true);
   }
 
   const handleImperialRadio = () => {
@@ -209,6 +212,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
     setUserHeight(0)
     setUserWeight(0)
     setUserInputs({})
+    setIsInputEmpty(true);
   }
 
   const [isHeightInputSelected, setIsHeightInputSelected] = useState(false);
@@ -270,7 +274,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
               </div>
             </div>
             <div className="user-form__user-inputs">
-              
+
               <div className={isWeightInputSelected ? `user-form__input-area user-form__input-area--selected` : `user-form__input-area`}>
                 <input
                   className="user-form__input"
@@ -309,7 +313,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
             </div>
             <div className="user-form__user-inputs">
               <label className="user-form__label" htmlFor="weight">
-                
+
               </label>
               <div className={isWeightInputSelected ? `user-form__input-area user-form__input-area--selected` : `user-form__input-area`}>
                 <input
@@ -347,6 +351,7 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
                 onFocus={handleHeightInputFocus}
                 onBlur={handleHeightInputBlur}
                 value={userHeight}
+                pattern = "/^\d*(\.\d{0,2})?$/"
               />
               <span className="user-form__unit">cm</span>
             </div>

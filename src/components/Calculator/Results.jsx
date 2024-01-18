@@ -53,17 +53,42 @@ function Results({ isInputEmpty, userInputs }) {
   const [weightRange, setWeightRange] = useState("")
   const calculateWeightRange = (height) => {
     
+    let lowerLimit = 0;
+    let upperLimit = 0;
 
-    const lowerLimit = 18.5 * (height**2);
-    const upperLimit = 24.8 * (height**2);
+    if (userInputs['height'] !== undefined && userInputs['weight'] !== undefined) {
 
-    setWeightRange(`${lowerLimit.toFixed(1)}kg - ${upperLimit.toFixed(1)}kg`)
+      lowerLimit = 18.5 * (height**2);
+      upperLimit = 24.8 * (height**2);
+      setWeightRange(`${lowerLimit.toFixed(1)}kg - ${upperLimit.toFixed(1)}kg`)
+
+    } else if (userInputs['feet'] && userInputs['inch'] && userInputs['stone'] && userInputs['lbs']) {
+
+
+      lowerLimit = 18.5/703 * (height**2);
+      upperLimit = 24.8/703 * (height**2);
+      setWeightRange(`${lowerLimit.toFixed(1)}lbs - ${upperLimit.toFixed(1)}lbs`)
+
+    }
+    
+
+    
   }
 
   useEffect(() => {
     calculateResults(userInputs)
     bmiRange(result);
-    calculateWeightRange(userInputs.height, range);
+    if (userInputs['height'] !== undefined && userInputs['weight'] !== undefined) {
+
+      calculateWeightRange(userInputs.height, range);
+
+    } else if (userInputs['feet'] && userInputs['inch'] && userInputs['stone'] && userInputs['lbs']) {
+      let height = userInputs.feet * 12 + userInputs.inch;
+      
+      calculateWeightRange(height, range);
+
+    }
+    
   }, [range, result, userInputs])
 
   if (isInputEmpty) {
