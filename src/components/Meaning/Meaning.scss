@@ -6,29 +6,48 @@
 .meaning {
     display:flex;
     justify-content: space-between;
-    padding: 4rem 8.75rem;
+    align-items: center;
+    margin-top:6rem;
+    @include desktop {
+        padding: 4rem 8.75rem;
+        margin-top: 0;
+    }
     &__right-section{
         display: flex;
         flex-direction: column;
         width: 29.0625rem;
     }
     &__eating-man{
-        width: 35.25rem;
-        height: 33.3125rem;
+        width: 26.5rem;
+        height: 25.6875rem;
+        position: relative;
+        left:-5.5rem;
+        @include desktop {
+            left:0;
+            width:35.25rem;
+            height: 33.3125rem;
+        }
     }
     &__arc-logo{
-        width:5.3125rem;
-        height: 12.5rem;
-        align-self:flex-end;
+        display: none;
+        @include desktop {
+            display: block;
+            width:5.3125rem;
+            height: 12.5rem;
+            align-self: flex-end;
+        }
     }
     &__title{
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight:600;
-        line-height: 52.8px;
         color: $primary-text;
         margin-top:2.25rem;
         margin-bottom:2.25rem;
-        width: 34vw;
+        @include desktop {
+            font-size: 3rem;
+            line-height: 52.8px;
+            width: 34vw;
+        }
     }
     &__description{
         margin:0;
@@ -36,5 +55,9 @@
         font-weight:400;
         line-height:24px;
         color: $secondary-text;
+        width: 20.68975rem;
+        @include desktop {
+
+        }
     }
 }

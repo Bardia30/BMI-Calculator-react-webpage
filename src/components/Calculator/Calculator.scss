@@ -2,15 +2,36 @@
 @use '../../styles/partials/mixins' as*;
 
 .calculator {
-    display:flex;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10.5rem;
+  padding-left: 8.75rem;
+  padding-right: 8.75rem;
+    @include tablet {
+      flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    }
+    @include desktop {
+      flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-top: 10.5rem;
     padding-left: 8.75rem;
     padding-right: 8.75rem;
-    
+    }
     &__left-section{
-      width:32.25rem;
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      @include desktop {
+        width:32.25rem;
+      }
     }
     &__prompt{
       color: $primary-text;
@@ -21,28 +42,53 @@
     
   
     &__right-section{
-      width:35.25rem;
+      width:100%;
       height:auto;
       background: $primary-background;
       border-radius: 16px;
       box-shadow: $card-shadow;
       padding-bottom:2rem;
+      @include desktop {
+        width:35.25rem;
+      }
     }
   
     &__title{
       color: $primary-text;
+      font-size: 3rem;
+      font-weight: 600;
+      // line-height: 4.4rem;
+      margin-bottom:2.1875rem;
+      margin-top:0;
+      @include tablet {
+        text-align: center;
+        width:50vw;
+        
+      }
+      @include desktop {
+        margin-left: 13.75rem;
+        text-align: left;
+        color: $primary-text;
       font-size: 4rem;
       font-weight: 600;
       line-height: 4.4rem;
       margin-bottom:2.1875rem;
       margin-top:0;
+      }
     }
     &__description{
       color: $secondary-text;
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.87rem;
-      
+      text-align: center;
+      @include desktop {
+        color: $secondary-text;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.87rem;
+        text-align: left;
+      }
     }
     &__prompt {
       padding-left:2rem;
@@ -63,7 +109,10 @@
     &__radio-section {
         display: flex;
         justify-content: space-between;
-        width:24.75rem;
+        width: 71%;
+        @include desktop {
+          width:24.75rem;
+        }
     }
     &__input-section {
         display: flex;
@@ -82,7 +131,7 @@
       margin-top: 2rem;
     }
     &__input-area{
-      width:14.875rem;
+      width:18.75rem;
       height:4.3125rem;
       border: $input-border;
       border-radius: 12px;
@@ -90,6 +139,12 @@
       transition: 0.222s ease-in-out;
       &--selected {
         border: $input-border-selected;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include desktop {
+        width:14.875rem;
       }
     }
     &__input{
@@ -116,6 +171,12 @@
       font-size: 1.5rem;
       font-weight:600;
       line-height: 29px;
+      margin-right: 1.5rem;
+      @include desktop {
+
+        margin-right:0;
+
+      }
     }
     &__error {
       margin:0;
@@ -128,7 +189,7 @@
 
 .results {
     padding:2rem;
-    width: 27.25rem;
+    
     height: 6.375rem;
     border-radius:16px;
     border-top-right-radius: 10rem;
@@ -139,12 +200,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include desktop {
+      width: 27.25rem;
+    }
     &--empty {
       flex-direction: column;
       justify-content: flex-start;
-      width: 27.25rem;
+      
       height: 4.125rem;
       align-items: flex-start;
+      @include desktop {
+        width: 27.25rem;
+      }
     }
     &__intro{
       color: $primary-background;

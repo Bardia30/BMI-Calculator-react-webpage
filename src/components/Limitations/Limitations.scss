@@ -6,27 +6,57 @@
 .limitations {
     display: flex;
     flex-direction: column;
-    padding: 7.5rem 8.75rem;
+    justify-content: center;
+    align-items: center;
+    column-gap:1rem;
+    row-gap: 1rem;
+    padding-left: 2.5rem;
+    padding-right:2.5rem;
+    padding-bottom: 3rem;
+    @include desktop {
+        padding: 7.5rem 8.75rem;
+    }
+    &--mobile {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
     &__upper{
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         margin-bottom:2rem;
         margin-right:6.1875rem;
+
+        @include desktop {
+            flex-direction: row;
+        }
     }
     &__title{
         color: $primary-text;
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 600;
         line-height: 52px;
         margin-bottom:2.1875rem;
         margin-top:0;
+        text-align: center;
+        @include desktop {
+            font-size: 3rem;
+            text-align: left;
+        }
     }
     &__description{
         color: $secondary-text;
         font-size: 1rem;
         font-weight: 400;
         line-height: 24px;
-        width: 35.25rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        @include desktop {
+            text-align: left;
+            width: 35.25rem;
+            margin-bottom: 0;
+        }
     }
     &__mid-section{
         display: flex;
@@ -57,13 +87,17 @@
 
 .limit-card{
     
-    padding: 2rem;
+    padding:0.5rem 2rem;
     background:$primary-background;
     border-radius:16px;
     box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
     &--upper {
-        width: 20.8125rem;
-        height: 12.5rem;
+        width: 14.2125rem;
+        height: 14.5rem;
+        @include desktop {
+            width: 20.8125rem;
+
+        }
     }
     &__upper-section{
         display: flex;
@@ -83,7 +117,10 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 24px;
-        width: 18.8125rem;
+        
         margin: 0;
+        @include desktop {
+            width: 18.8125rem;
+        }
     }
 }
