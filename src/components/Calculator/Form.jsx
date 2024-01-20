@@ -254,14 +254,14 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
       </div>
       {isImperialClicked ?
         <div>
-          <div className="user-form__input-section">
+          <div className="user-form__input-section user-form__input-section--imperial">
             <div className="user-form__user-inputs">
               <label className="user-form__label" htmlFor="height">
                 Height
               </label>
-              <div className={isHeightInputSelected ? `user-form__input-area user-form__input-area--selected` : `user-form__input-area`}>
+              <div className={isHeightInputSelected ? `user-form__input-area user-form__input-area--imperial user-form__input-area--selected` : `user-form__input-area user-form__input-area--imperial`}>
                 <input
-                  className="user-form__input"
+                  className="user-form__input user-form__input--imperial"
                   name="height"
                   type="text"
                   placeholder="0"
@@ -275,9 +275,9 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
             </div>
             <div className="user-form__user-inputs">
 
-              <div className={isWeightInputSelected ? `user-form__input-area user-form__input-area--selected` : `user-form__input-area`}>
+              <div className={isWeightInputSelected ? `user-form__input-area user-form__input-area--imperial user-form__input-area--selected` : `user-form__input-area user-form__input-area--imperial`}>
                 <input
-                  className="user-form__input"
+                  className="user-form__input user-form__input--imperial"
                   name="weight"
                   type="text"
                   placeholder="0"
@@ -292,14 +292,14 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
 
 
           </div>
-          <div className="user-form__input-section">
+          <div className="user-form__input-section user-form__input-section--imperial">
             <div className="user-form__user-inputs">
               <label className="user-form__label" htmlFor="height">
                 Weight
               </label>
-              <div className={isHeightInputSelected ? `user-form__input-area user-form__input-area--selected` : `user-form__input-area`}>
+              <div className={isHeightInputSelected ? `user-form__input-area user-form__input-area--imperial user-form__input-area--selected` : `user-form__input-area user-form__input-area--imperial`}>
                 <input
-                  className="user-form__input"
+                  className="user-form__input user-form__input--imperial"
                   name="height"
                   type="text"
                   placeholder="0"
@@ -315,9 +315,9 @@ function Form({ userInputs, setUserInputs, isInputEmpty, setIsInputEmpty }) {
               <label className="user-form__label" htmlFor="weight">
 
               </label>
-              <div className={isWeightInputSelected ? `user-form__input-area user-form__input-area--selected` : `user-form__input-area`}>
+              <div className={isWeightInputSelected ? `user-form__input-area user-form__input-area--imperial user-form__input-area--selected` : `user-form__input-area user-form__input-area--imperial`}>
                 <input
-                  className="user-form__input"
+                  className="user-form__input user-form__input--imperial"
                   name="weight"
                   type="text"
                   placeholder="0"

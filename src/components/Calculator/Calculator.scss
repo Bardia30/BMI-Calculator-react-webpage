@@ -4,22 +4,18 @@
 .calculator {
   display:flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 10.5rem;
-  padding-left: 8.75rem;
-  padding-right: 8.75rem;
+  margin-top: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
     @include tablet {
-      flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 7rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+      margin-top: 7rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
     @include desktop {
       flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     margin-top: 10.5rem;
     padding-left: 8.75rem;
     padding-right: 8.75rem;
@@ -58,10 +54,11 @@
       font-size: 3rem;
       font-weight: 600;
       // line-height: 4.4rem;
-      margin-bottom:2.1875rem;
+      margin-bottom:1.5rem;
       margin-top:0;
+      text-align: center;
       @include tablet {
-        text-align: center;
+        margin-bottom:2.1875rem;
         width:50vw;
         
       }
@@ -82,6 +79,7 @@
       font-weight: 400;
       line-height: 1.87rem;
       text-align: center;
+      margin-top:0;
       @include desktop {
         color: $secondary-text;
         font-size: 1rem;
@@ -91,25 +89,39 @@
       }
     }
     &__prompt {
-      padding-left:2rem;
-      padding-top:2rem;
+      padding-left:1.5rem;
+      padding-top:1.5rem;
       margin:0;
+      @include tablet {
+        padding-left:2rem;
+        padding-top:2rem;
+        margin:0;
+      }
     }
 }
   
   
   
 .user-form {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
+    @include tablet {
+      padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    }
   
     &__radio-section {
         display: flex;
         justify-content: space-between;
-        width: 71%;
+        width: 100%;
+        @include tablet {
+          width: 71%;
+
+        }
         @include desktop {
           width:24.75rem;
         }
@@ -117,8 +129,18 @@
     &__input-section {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        flex-direction: column;
+        
         column-gap: 2.5rem;
+        &--imperial {
+          flex-direction: row;
+          column-gap: 0;
+          align-items: flex-end;
+        }
+        @include tablet {
+          flex-direction: row;
+          align-items: flex-end;
+        }
     }
     &__label{
       font-size: 0.875rem;
@@ -128,10 +150,14 @@
       
     }
     &__user-inputs{
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+      @include tablet {
+        margin-top: 2rem;     
+      }
+      
     }
     &__input-area{
-      width:18.75rem;
+      width:100%;
       height:4.3125rem;
       border: $input-border;
       border-radius: 12px;
@@ -140,9 +166,18 @@
       &--selected {
         border: $input-border-selected;
       }
+      &--imperial {
+        width: 90%;
+        @include tablet {
+          width: 100%;
+        }
+      }
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include tablet {
+        width:18.75rem;
+      }
       @include desktop {
         width:14.875rem;
       }
@@ -155,6 +190,12 @@
       font-size: 1.5rem;
       font-weight: 600;
       line-height: 29px;
+      &--imperial {
+        width: 100%;
+        @include tablet {
+          width: 8.1875rem;
+        }
+      }
       &::placeholder{
         color: $placeholder-text;
         font-size: 1.5rem;
@@ -172,11 +213,6 @@
       font-weight:600;
       line-height: 29px;
       margin-right: 1.5rem;
-      @include desktop {
-
-        margin-right:0;
-
-      }
     }
     &__error {
       margin:0;
@@ -189,26 +225,34 @@
 
 .results {
     padding:2rem;
-    
-    height: 6.375rem;
     border-radius:16px;
-    border-top-right-radius: 10rem;
-    border-bottom-right-radius: 10rem;
-    
     background: $button-color;
-    margin: 2rem;
+    margin: 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      height: 6.375rem;
+      align-items: center;
+    }
     @include desktop {
+      padding:2rem;
+      margin: 2rem;
       width: 27.25rem;
+      border-top-right-radius: 10rem;
+      border-bottom-right-radius: 10rem;
     }
     &--empty {
       flex-direction: column;
       justify-content: flex-start;
       
-      height: 4.125rem;
+      
       align-items: flex-start;
+      @include tablet {
+        height: 4.125rem;
+      }
       @include desktop {
         width: 27.25rem;
       }
@@ -223,8 +267,12 @@
     &__bmi{
       color: $primary-background;
       margin:0;
+      margin-bottom: 1.5rem;
       font-size: 4rem;
       font-weight:600;
+      @include tablet {
+        margin-bottom: 0;
+      }
     }
     &__explanation{
       color: #ffffff;
