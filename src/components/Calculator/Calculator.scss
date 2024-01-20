@@ -176,7 +176,10 @@
     }
     &__unit{
       @include font($size:1.5rem, $weight: 600, $line: 29px, $color: $button-color);
-      margin-right: 1.5rem;
+      margin-right: 1rem;
+      @include tablet {
+        margin-right: 1.5rem;
+      }
     }
     &__error {
       margin:0;
