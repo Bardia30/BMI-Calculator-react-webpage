@@ -12,32 +12,18 @@
   border-bottom-left-radius: 35px;
   margin-bottom: 4.0625rem;
   z-index:-1;
-  display: flex;
-  justify-content: center;
+  @include flex ($justify: center);
   &__logo{
     position: relative;
     height:2.5rem;
     width:2.5rem;
     top:2rem;
   }
-  @include tablet {
-    
-  }
   @include desktop {
-
     justify-content: flex-start;
-    background: $header-gradient; 
-  position:absolute;
-  top:0;
   width:67.9vw;
   margin-left:1.5rem;
-  height:46rem;
-  border-bottom-right-radius: 35px;
-  border-bottom-left-radius: 35px;
-  margin-bottom: 4.0625rem;
-  z-index:-1;
   &__logo{
-    position: relative;
     top: 4.6875rem;
     left: 7.25rem;
   }

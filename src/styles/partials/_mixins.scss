@@ -1,4 +1,4 @@
-@use './variables';
+@use './_variables.scss' as*;
 
 @mixin desktop {
     @media (min-width: 1440px){
@@ -28,11 +28,12 @@
 
 
 //styling for fonts
-@mixin font($size:2rem, $weight: 700, $line:normal, $spacing:normal) {
+@mixin font($color: $primary-text, $size:2rem, $weight: 700, $line:normal, $spacing:normal) {
     font-size:$size;
     font-weight:$weight;
     line-height: $line;
     letter-spacing: $spacing;
+    color: $color;
 }
 
 @mixin height-width($h:28vh,$w:100%) {

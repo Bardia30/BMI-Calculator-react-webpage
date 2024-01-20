@@ -15,8 +15,7 @@
     }
     
     @include desktop {
-        display: flex;
-        justify-content: space-evenly;
+        @include flex ($justify: space-evenly);
         margin: 6rem 1.5rem;
         border-radius: 14px;
         padding:  4.5rem 7.25rem;
@@ -26,6 +25,7 @@
 .card {
     display: flex;
     flex-direction: column;
+    @include flex ($direction: column);
     @include tablet {
         flex-direction: row;
     }
@@ -35,8 +35,7 @@
         justify-content: flex-start;
     }
     &__texts {
-        display: flex;
-        flex-direction: column;
+        @include flex ($direction: column);
         margin-left:0;
         margin-bottom: 2.5rem;
         @include tablet {
@@ -52,17 +51,11 @@
     }
     
     &__title{
-        font-size: 1.5rem;
-        font-weight: 600;
-        line-height: 24px;
-        color: $primary-text;
+        @include font($size: 1.5rem, $weight: 600, $line: 24px);
     }
 
     &__description{
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 24px;
-        color: $secondary-text;
+        @include font($size: 1rem, $weight: 400, $line: 24px, $color: $secondary-text);
         margin:0;
         @include desktop {
             width: 22.8125rem;

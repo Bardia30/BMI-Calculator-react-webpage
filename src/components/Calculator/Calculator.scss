@@ -2,10 +2,7 @@
 @use '../../styles/partials/mixins' as*;
 
 .calculator {
-  display:flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex($align: center, $direction: column, $justify: space-between);
   margin-top: 6rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -21,18 +18,13 @@
     padding-right: 8.75rem;
     }
     &__left-section{
-      display: flex;
-      flex-direction:column;
-      justify-content: center;
-      align-items: center;
+      @include flex($align: center, $direction: column, $justify: center);
       @include desktop {
         width:32.25rem;
       }
     }
     &__prompt{
-      color: $primary-text;
-      font-size:1.5rem;
-      font-weight: 600;
+      @include font($size: 1.5rem, $weight: 600 )
     }
   
     
@@ -50,10 +42,7 @@
     }
   
     &__title{
-      color: $primary-text;
-      font-size: 3rem;
-      font-weight: 600;
-      // line-height: 4.4rem;
+      @include font($size:3rem, $weight:600);
       margin-bottom:1.5rem;
       margin-top:0;
       text-align: center;
@@ -65,26 +54,17 @@
       @include desktop {
         margin-left: 13.75rem;
         text-align: left;
-        color: $primary-text;
-      font-size: 4rem;
-      font-weight: 600;
-      line-height: 4.4rem;
-      margin-bottom:2.1875rem;
-      margin-top:0;
+        font-size: 4rem;
+        line-height: 4.4rem;
+        margin-bottom:2.1875rem;
+        margin-top:0;
       }
     }
     &__description{
-      color: $secondary-text;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.87rem;
+      @include font($size: 1rem, $weight:400, $line: 1.87rem, $color: $secondary-text);
       text-align: center;
       margin-top:0;
       @include desktop {
-        color: $secondary-text;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.87rem;
         text-align: left;
       }
     }
@@ -106,8 +86,7 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    @include flex($direction:column);
     @include tablet {
       padding-left: 2rem;
     padding-right: 2rem;
@@ -115,8 +94,7 @@
     }
   
     &__radio-section {
-        display: flex;
-        justify-content: space-between;
+        @include flex($justify: space-between);
         width: 100%;
         @include tablet {
           width: 71%;
@@ -127,11 +105,8 @@
         }
     }
     &__input-section {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        
         column-gap: 2.5rem;
+        @include flex($justify: space-between, $direction: column);
         &--imperial {
           flex-direction: row;
           column-gap: 0;
@@ -143,11 +118,7 @@
         }
     }
     &__label{
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: $secondary-text;
-      line-height: 21px;
-      
+      @include font($size: 0.875rem, $weight: 400, $color: $secondary-text, $line: 21px);
     }
     &__user-inputs{
       margin-top: 1.5rem;
@@ -172,9 +143,7 @@
           width: 100%;
         }
       }
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex($justify:space-between, $align: center);
       @include tablet {
         width:18.75rem;
       }
@@ -186,10 +155,7 @@
       border:none;
       height:1.8125rem;
       width: 8.1875rem;
-      color:$primary-text;
-      font-size: 1.5rem;
-      font-weight: 600;
-      line-height: 29px;
+      @include font($size:1.5rem, $weight: 600, $line: 29px);
       &--imperial {
         width: 100%;
         @include tablet {
@@ -201,6 +167,7 @@
         font-size: 1.5rem;
         font-weight: 600;
         line-height: 29px;
+        @include font($size:1.5rem, $weight: 600, $line: 29px, $color: $placeholder-text);
       }
       margin: 1.25rem 1.5rem;
       &:focus-within{
@@ -208,10 +175,7 @@
       }
     }
     &__unit{
-      color: $button-color;
-      font-size: 1.5rem;
-      font-weight:600;
-      line-height: 29px;
+      @include font($size:1.5rem, $weight: 600, $line: 29px, $color: $button-color);
       margin-right: 1.5rem;
     }
     &__error {
@@ -228,10 +192,7 @@
     border-radius:16px;
     background: $button-color;
     margin: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-
-    flex-direction: column;
+    @include flex ($justify: space-between, $direction: column);
     @include tablet {
       flex-direction: row;
       height: 6.375rem;
@@ -245,11 +206,7 @@
       border-bottom-right-radius: 10rem;
     }
     &--empty {
-      flex-direction: column;
-      justify-content: flex-start;
-      
-      
-      align-items: flex-start;
+      @include flex($align: flex-start, $justify: flex-start, $direction: column);
       @include tablet {
         height: 4.125rem;
       }
@@ -258,51 +215,39 @@
       }
     }
     &__intro{
-      color: $primary-background;
       margin:0;
-      font-size: 1rem;
-      font-weight:600;
-      line-height: 24px;
+      @include font ($size: 1rem, $weight: 600, $line: 24px, $color: $primary-background);
     }
     &__bmi{
-      color: $primary-background;
       margin:0;
       margin-bottom: 1.5rem;
-      font-size: 4rem;
-      font-weight:600;
+      @include font ($size: 4rem, $weight: 600, $color: $primary-background);
       @include tablet {
         margin-bottom: 0;
       }
     }
     &__explanation{
-      color: #ffffff;
       margin:0;
-      font-size: 0.875rem;
-      font-weight:400;
-      line-height: 21px;
+      @include font($color: white, $size: 0.875rem, $weight:400, $line: 21px );
       width:12.875rem;
     }
     &__ideal-weight {
       font-weight: 700;
     }
     &__welcome {
-      font-size: 1.5rem;
-      color: #ffffff;
-      font-weight: 600;
+      @include font($color: white, $size: 1.5rem, $weight:600 );
       margin:0;
     }
     &__instructions {
-      color: #ffffff;
       margin:0;
-      font-size: 0.875rem;
-      font-weight:400;
+      @include font($color: white, $size: 0.875rem, $weight:400 );
       margin-top:1rem;
     }
 }
 
 .radio {
-    display: flex;
-    align-items: center;
+    
+    @include flex ($align: center);
     cursor: pointer;
     &__button {
         background:$primary-background;
@@ -323,6 +268,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include flex($justify: center, $align: center);
     }
     &__button-inside--active {
         height: 15px;
@@ -334,9 +280,7 @@
         display: none;
     }
     &__label{
-        color:$primary-text;
-        font-size: 1rem;
-        font-weight: 600;
+        @include font($size: 1rem, $weight: 600);
         margin-left:1.125rem;
     }
 }

@@ -4,10 +4,7 @@
 
 
 .limitations {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex ($direction: column, $justify: center, $align: center);
     column-gap:1rem;
     row-gap: 1rem;
     padding-left: 1.25rem;
@@ -21,14 +18,10 @@
         padding: 7.5rem 8.75rem;
     }
     &--mobile {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+        @include flex($wrap: wrap, $direction: row);
     }
     &__upper{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+        @include flex($justify: space-between, $direction: column);
         margin-bottom:2rem;
         margin-right:6.1875rem;
 
@@ -37,10 +30,7 @@
         }
     }
     &__title{
-        color: $primary-text;
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 52px;
+        @include font ($size: 2rem, $weight: 600, $line: 52px);
         margin-bottom:2.1875rem;
         margin-top:0;
         text-align: center;
@@ -50,10 +40,7 @@
         }
     }
     &__description{
-        color: $secondary-text;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 24px;
+        @include font($color: $secondary-text, $weight: 400, $size: 1rem, $line: 24px);
         margin-bottom: 2.5rem;
         text-align: center;
         @include desktop {
@@ -63,9 +50,7 @@
         }
     }
     &__mid-section{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        @include flex($justify: space-between, $align: flex-start);
         margin-bottom: 1.5rem;
     }
     &__curve{
@@ -80,8 +65,7 @@
         margin-left: 8.6875rem;
     }
     &__bottom-section {
-        display: flex;
-        justify-content: center;
+        @include flex ($justify: center);
         column-gap: 2rem;
     }
 }
@@ -112,18 +96,14 @@
         margin-right: 1rem;
     }
     &__title{
-        color: $primary-text;
-        font-size: 1.25rem;
-        font-weight: 600;
-        line-height: 24px;
-
+        @include font($size: 1.25rem, $weight: 600, $line: 24px);
     }
     &__description{
         color: $secondary-text;
         font-size: 1rem;
         font-weight: 400;
         line-height: 24px;
-        
+        @include font($size: 1rem, $weight: 400, $line: 24px, $color: $secondary-text);
         margin: 0;
         @include desktop {
             width: 18.8125rem;

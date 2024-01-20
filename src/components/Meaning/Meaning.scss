@@ -4,11 +4,8 @@
 
 
 .meaning {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top:6rem;
-    flex-direction: column;
+    @include flex($justify: space-between, $align: center, $direction: column);
     @include tablet {
         flex-direction: row;
     }
@@ -17,8 +14,7 @@
         margin-top: 0;
     }
     &__right-section{
-        display: flex;
-        flex-direction: column;
+        @include flex ($direction: column);
         padding: 1.5rem;
         @include tablet {
             width: 29.0625rem;
@@ -50,9 +46,7 @@
         }
     }
     &__title{
-        font-size: 2rem;
-        font-weight:600;
-        color: $primary-text;
+        @include font($size: 2rem, $weight: 600);
         margin-top:2.25rem;
         margin-bottom:2.25rem;
         @include desktop {
@@ -63,13 +57,6 @@
     }
     &__description{
         margin:0;
-        font-size: 1rem;
-        font-weight:400;
-        line-height:24px;
-        color: $secondary-text;
-        width: 20.68975rem;
-        @include desktop {
-
-        }
+        @include font ($size: 1rem, $weight: 400, $line: 24px, $color: $secondary-text);
     }
 }
